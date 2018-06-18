@@ -13,10 +13,10 @@ ln -sf /secrets/ssl/USERTrustRSACertificationAuthority.pem /etc/pki/tls/certs/US
 ln -sf /secrets/ssl/AddTrustExternalCARoot.pem /etc/pki/tls/certs/AddTrustExternalCARoot.pem
 ln -sf /secrets/ssl/sha384-Intermediate-cert.pem /etc/pki/tls/certs/sha384-Intermediate-cert.pem
 
-#if [ -f /secrets/app/local.start.sh ]
-#then
-#  /bin/sh /secrets/app/local.start.sh
-#fi
+if [ -f /secrets/app/local.start.sh ]
+then
+  /bin/sh /secrets/app/local.start.sh
+fi
 
 ## Rehash command needs to be run before starting apache.
 c_rehash /etc/pki/tls/certs >/dev/null
@@ -26,6 +26,6 @@ c_rehash /etc/pki/tls/certs >/dev/null
 #drush @sites cc all --yes
 #drush up --no-backup --yes
 
-while true; do sleep 2; done
+#while true; do sleep 2; done
 
 /usr/sbin/httpd -DFOREGROUND -f "/etc/httpd/conf/httpd.conf"
