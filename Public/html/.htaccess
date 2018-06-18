@@ -1,0 +1,7 @@
+<Files config.php>
+order allow,deny
+deny from all
+</Files>
+AddType application/pdf .pdf
+Redirect 301 /wellnesscommittee/events.html /wellnesscommittee/events.php
+Redirect 301 /more.html /solicitation.html

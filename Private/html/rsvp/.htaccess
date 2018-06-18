@@ -1,0 +1,6 @@
+<Files admin.php>
+require user janeej mrschlei sbrugler hmander
+</Files>
+<Files delete.php>
+require user janeej mrschlei sbrugler
+</Files>
