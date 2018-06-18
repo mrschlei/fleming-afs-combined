@@ -33,6 +33,7 @@ RUN yum install -y UMwebPHP
 EXPOSE 8080
 EXPOSE 8443
 
+RUN mkdir -p /var/www/Public/html /var/www/Private/html
 COPY . /var/www/html 
 
 ###  

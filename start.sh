@@ -5,8 +5,8 @@ ln -sf /dev/stdout /var/log/httpd/access_log
 ln -sf /dev/stderr /var/log/httpd/error_log
 
 # apache and virtual host secrets
-ln -sf /secrets/httpd/httpd.conf /etc/httpd/conf/httpd.conf
-#ln -sf /secrets/httpd/cosign.conf /etc/httpd/conf.d/cosign.conf
+#ln -sf /secrets/httpd/httpd.conf /etc/httpd/conf/httpd.conf
+ln -sf /secrets/httpd/cosign.conf /etc/httpd/conf.d/cosign.conf
 
 # SSL secrets
 ln -sf /secrets/ssl/USERTrustRSACertificationAuthority.pem /etc/pki/tls/certs/USERTrustRSACertificationAuthority.pem
