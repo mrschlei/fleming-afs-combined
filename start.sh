@@ -19,9 +19,7 @@ then
 fi
 
 ## Rehash command needs to be run before starting apache.
-#c_rehash /etc/pki/tls/certs >/dev/null
-
-#cd /usr/local/apache2/htdocs
+c_rehash /etc/pki/tls/certs >/dev/null
 
 #drush @sites cc all --yes
 #drush up --no-backup --yes

@@ -32,7 +32,6 @@ RUN yum install -y UMwebPHP
 ### Section that sets up Apache and Cosign to run as non-root user.
 EXPOSE 8080
 EXPOSE 8443
-EXPOSE 8444
 
 RUN mkdir -p /var/www/Public/html /var/www/Private/html
 COPY . /var/www
