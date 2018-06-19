@@ -33,7 +33,7 @@ RUN yum install -y UMwebPHP
 EXPOSE 8080
 EXPOSE 8443
 
-RUN mkdir -p /var/www/Public/html /var/www/Private/html
+RUN mkdir -p /etc/httpd/srm /var/www/Public/html /var/www/Private/html
 COPY . /var/www
 
 ###  
@@ -46,8 +46,8 @@ RUN usermod -a -G root www-data
 #RUN sudo chmod -R g+rw /etc/httpd /etc/pki/tls /var/lib 
 
 ### This works, when on a separate line
-RUN sudo chown -R root:root /etc/httpd /etc/httpd/conf.d /etc/httpd/logs /etc/pki/tls /run/httpd /var/lib
-RUN sudo chmod -R g+rw /etc/httpd /etc/httpd/conf.d /etc/httpd/logs /etc/pki/tls /run/httpd /var/lib
+RUN sudo chown -R root:root /etc/httpd /etc/httpd/conf.d /etc/httpd/logs /etc/httpd/srm /etc/pki/tls /run/httpd /var/lib
+RUN sudo chmod -R g+rw /etc/httpd /etc/httpd/conf.d /etc/httpd/logs /etc/httpd/srm /etc/pki/tls /run/httpd /var/lib
 
 ### This works, when on a separate line
 RUN sudo chown -R root:root /var/log/httpd /var/www
