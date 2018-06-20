@@ -45,13 +45,25 @@ RUN usermod -a -G root www-data
 #RUN sudo chown -R root:root /etc/httpd /etc/pki/tls /var/lib 
 #RUN sudo chmod -R g+rw /etc/httpd /etc/pki/tls /var/lib 
 
-### This works, when on a separate line
-RUN sudo chown -R root:root /etc/httpd /etc/httpd/conf.d \
-	/etc/httpd/logs /etc/httpd/srm /etc/pki/tls \
-	/run/httpd /var/lib
-RUN sudo chmod -R g+rw /etc/httpd /etc/httpd/conf.d \
-	/etc/httpd/logs /etc/httpd/srm /etc/pki/tls \
-	/run/httpd /var/lib
+### Use single lines, because maybe multi-line, escaped
+### commands blah blah blah
+RUN sudo chown -R root:root /etc/httpd /etc/httpd/conf.d
+RUN sudo chmod -R g+rw /etc/httpd /etc/httpd/conf.d
+
+RUN sudo chown -R root:root /etc/httpd/logs /etc/httpd/srm 
+RUN sudo chmod -R g+rw /etc/httpd/logs /etc/httpd/srm 
+
+RUN sudo chown -R root:root /etc/pki/tls /etc/httpd/logs 
+RUN sudo chmod -R g+rw /etc/pki/tls /etc/httpd/logs 
+
+RUN sudo chown -R root:root /etc/httpd/srm /etc/pki/tls
+RUN sudo chmod -R g+rw /etc/pki/tls /etc/httpd/logs 
+
+RUN sudo chown -R root:root /etc/httpd/logs /etc/httpd/srm
+RUN sudo chmod -R g+rw /etc/httpd/srm /etc/pki/tls
+
+RUN sudo chown -R root:root /run/httpd /var/lib
+RUN sudo chmod -R g+rw /run/httpd /var/lib
 
 ### This works, when on a separate line
 RUN sudo chown -R root:root /var/cosign/filter
