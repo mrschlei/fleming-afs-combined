@@ -54,8 +54,8 @@ RUN sudo chmod -R g+rw /etc/httpd /etc/httpd/conf.d \
 	/run/httpd /var/lib
 
 ### This works, when on a separate line
-RUN sudo chown -R root:root /var/log/httpd /var/www
-RUN sudo chmod -R g+rw  /var/log/httpd /var/www
+RUN sudo chown -R root:root /var/log /var/www
+RUN sudo chmod -R g+rw  /var/log /var/www
 
 ### This works, when on a separate line
 RUN sudo chown -R root:root /var/cosign/filter
@@ -64,10 +64,6 @@ RUN sudo chmod -R g+rw  /var/cosign/filter
 ### This works, when on a separate line
 #RUN sudo chown -R root:root /run/httpd
 #RUN sudo chmod -R g+w /run/httpd
-
-#RUN sudo updatedb
-#RUN sudo chown -R root:slocate /var/lib/mlocate
-#RUN sudo chmod 777 /var/lib/mlocate
 
 COPY start.sh /usr/local/bin
 RUN chmod 755 /usr/local/bin/start.sh
