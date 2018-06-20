@@ -1,3 +1,4 @@
+Authtype Cosign
 <Files config.php>
 order allow,deny
 deny from all
