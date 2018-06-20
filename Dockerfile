@@ -50,8 +50,8 @@ RUN sudo chown -R root:root /etc/httpd /etc/httpd/conf.d /etc/httpd/logs /etc/ht
 RUN sudo chmod -R g+rw /etc/httpd /etc/httpd/conf.d /etc/httpd/logs /etc/httpd/srm /etc/pki/tls /run/httpd /var/lib
 
 ### This works, when on a separate line
-RUN sudo chown -R root:root /var/log/httpd /var/www
-RUN sudo chmod -R 777 /var/log/httpd /var/www
+RUN sudo chown -R root:root /var/cosign/filter /var/log/httpd /var/www
+RUN sudo chmod -R g+rw /var/cosign/filter /var/log/httpd /var/www
 
 ### This works, when on a separate line
 #RUN sudo chown -R root:root /run/httpd
