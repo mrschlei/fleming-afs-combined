@@ -4,7 +4,7 @@ COPY epel-release-latest-7.noarch.rpm /etc/yum.repos.d
 
 RUN cd /etc/yum.repos.d/
 
-RUN yum update
+RUN yum update -y
 
 RUN yum-config-manager \
 	 --enable rhui-REGION-rhel-server-releases-optional
