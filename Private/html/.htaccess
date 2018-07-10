@@ -1,0 +1,6 @@
+<Files config.php>
+order allow,deny
+deny from all
+</Files>
+
+Redirect 301 /occupant.html /occupant.php
