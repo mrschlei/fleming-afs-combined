@@ -1,0 +1,8 @@
+#cleanup
+#<Files config.php>
+#order allow,deny
+#deny from all
+#</Files>
+  RewriteCond %{REQUEST_URI} !cosign/valid
+  RewriteRule ^ index.php [L]
+Redirect 301 /occupant.html /occupant.php
