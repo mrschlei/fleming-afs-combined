@@ -18,7 +18,7 @@ fi
 # modules and themes to the persistent volume.
 if [ -d /tmp/html ]
 then
-  mv /tmp/html/ /var/www/html/
+  cp -r /tmp/html/ /var/www/html
 fi
 
 a2enmod ssl
