@@ -16,9 +16,9 @@ fi
 
 # If it default folder doesn't exist, copy template
 # modules and themes to the persistent volume.
-if [! -f /var/www/html/sites/default/settings.php ]
+if [ -d /tmp/html ]
 then
-  mv -R /tmp/sites/ /var/www/html/
+  mv /tmp/html/ /var/www/html/
 fi
 
 a2enmod ssl
